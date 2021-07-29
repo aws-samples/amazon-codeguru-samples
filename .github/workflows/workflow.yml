@@ -35,7 +35,7 @@ jobs:
       uses: aws-actions/codeguru-reviewer@v1.1
       with:
         build_path: target # build artifact(s) directory
-        s3_bucket: YOUR-BUCKET-NAME  # S3 Bucket with "codeguru-reviewer-*" prefix
+        s3_bucket: codeguru-reviewer-mmk  # S3 Bucket with "codeguru-reviewer-*" prefix
         
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
