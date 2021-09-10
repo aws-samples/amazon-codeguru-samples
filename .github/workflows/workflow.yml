@@ -38,7 +38,7 @@ jobs:
       if: ${{ always() }}
       with:
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-mmkbucket  # S3 Bucket with "codeguru-reviewer-*" prefix
+        s3_bucket: codeguru-reviewer-<<UNIQUENAME>>  # S3 Bucket with "codeguru-reviewer-*" prefix
 
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
