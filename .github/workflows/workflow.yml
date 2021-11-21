@@ -33,21 +33,15 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-2 #AWS region where you want to use CodeGuru
 
-    - name: CodeGuru Reviewer
+    - name: AWS CodeGuru Reviewer Scanner
       uses: aws-actions/codeguru-reviewer@v1.1
-      if: ${{ always() }}
+      if: ${{ always() }} 
       with:
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-github-actions-565692740138 # S3 Bucket with "codeguru-reviewer-*" prefix
-
-    - name: 'Upload Artifact'
-      uses: actions/upload-artifact@v2
-      with:
-        name: sarif_results
-        path: codeguru-results*.json
-        
+        s3_bucket: codeguru-reviewer-github-actions-565692740138  # S3 Bucket with "codeguru-reviewer-*" prefix
+    
     - name: Upload review result
+      if: ${{ github.event_name != 'push' }}
       uses: github/codeql-action/upload-sarif@v1
-      if: ${{ always() }}
       with:
         sarif_file: codeguru-results.sarif.json
