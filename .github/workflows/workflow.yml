@@ -31,14 +31,14 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1 #AWS region where you want to use CodeGuru
+        aws-region: eu-west-2 #AWS region where you want to use CodeGuru
 
     - name: CodeGuru Reviewer
       uses: aws-actions/codeguru-reviewer@v1.1
       if: ${{ always() }}
       with:
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-<<UNIQUENAME>>  # S3 Bucket with "codeguru-reviewer-*" prefix
+        s3_bucket: codeguru-reviewer-github-actions-565692740138 # S3 Bucket with "codeguru-reviewer-*" prefix
 
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
