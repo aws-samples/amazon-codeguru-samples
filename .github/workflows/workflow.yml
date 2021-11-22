@@ -29,7 +29,7 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::565692740138:role/aws_codeguru_github_access
+        role-to-assume: arn:aws:iam::565692740138:role/codeguru-reviewer-iam-role-Role-19B1JX0FZE57Z
         aws-region: eu-west-2
 
     - name: AWS CodeGuru Reviewer Scanner
