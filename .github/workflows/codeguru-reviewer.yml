@@ -1,6 +1,6 @@
 
 name: Analyze with CodeGuru Reviewer
-on: [pull_request, push]
+on: [push]
 permissions:
     id-token: write
     contents: read
