@@ -33,7 +33,7 @@ jobs:
         s3_bucket: codeguru-reviewer-github-profiler-demo-048169001733-uw2
         build_path: ./target
 
-    - name: Store jars
+    - name: Store SARIF file
       uses: actions/upload-artifact@v2
       with:
         name: SARIF_recommendations
