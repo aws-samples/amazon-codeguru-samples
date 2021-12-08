@@ -3,9 +3,9 @@
 This repository will provide snippets of sample code to demonstrate the functionality of Amazon CodeGuru Reviewer.
 Please navigate to respective directories to obtain the code.
 
-Security Analysis: This directory contains sample java file along with the zipped source file and a build artifact jar file, that you can utilize to carry out the security analysis for CodeGuru. 
+Please refer to the blog for the detailed instructions including [Github Actions integration](https://aws.amazon.com/blogs/aws/amazon_codeguru_reviewer_updates_new_java_detectors_and_cicd_integration_with_github_actions/).
 
-Please refer to the blog for the detailed instructions including Github Actions intergration: https://aws.amazon.com/blogs/aws/amazon_codeguru_reviewer_updates_new_java_detectors_and_cicd_integration_with_github_actions/
+To set up CodeGuru Reviewer for your CI/CD workflow, take a look at this [CDK example](https://github.com/aws-samples/aws-codeguru-reviewer-cicd-cdk-sample).
 
 
 
