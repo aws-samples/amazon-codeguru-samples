@@ -1,0 +1,45 @@
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.3"
+  }
+}
+
+plugins {
+    id 'java'
+    id 'checkstyle'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+apply plugin: 'com.github.spotbugs'
+
+checkstyle {
+    sourceSets = [sourceSets.main]
+    ignoreFailures = false
+}
+
+spotbugs {
+    ignoreFailures.set(false)
+}
+
+repositories {
+    mavenCentral()
+}
+
+defaultTasks('jar')
+
+dependencies {
+  implementation 'com.amazonaws:aws-lambda-java-core:1.2.0'
+  implementation 'com.amazonaws:aws-lambda-java-events:2.2.6'
+  implementation 'com.amazonaws:aws-java-sdk-s3:1.11.624'
+  implementation 'org.apache.commons:commons-lang3:3.8'
+  implementation 'javax.servlet:javax.servlet-api:3.0.1'
+}
+
