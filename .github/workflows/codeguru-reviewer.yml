@@ -4,12 +4,14 @@ on: [pull_request, workflow_dispatch]
 permissions:
     id-token: write
     contents: read
+    pull-requests: write
     security-events: write 
 
 jobs:
   CodeGuruReviewerScan:
     runs-on: ubuntu-latest
     steps:
+    - run: echo ${{ secrets.GITHUB_TOKEN }}
     - name: Assume IAM Role
       continue-on-error: true
       uses: aws-actions/configure-aws-credentials@v1
