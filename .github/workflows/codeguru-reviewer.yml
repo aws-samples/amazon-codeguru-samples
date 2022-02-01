@@ -11,7 +11,8 @@ jobs:
   CodeGuruReviewerScan:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ secrets.GITHUB_TOKEN }}
+    - run: echo "$GITHUB_CONTEXT"
+    - run: env
     - name: Assume IAM Role
       continue-on-error: true
       uses: aws-actions/configure-aws-credentials@v1
