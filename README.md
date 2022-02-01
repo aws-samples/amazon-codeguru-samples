@@ -7,6 +7,7 @@ Please refer to the blog for the detailed instructions including [Github Actions
 
 To set up CodeGuru Reviewer for your CI/CD workflow, take a look at this [CDK example](https://github.com/aws-samples/aws-codeguru-reviewer-cicd-cdk-sample).
 
+To scan this package from your machine consider using the [CodeGuru Reviewer CLI](https://github.com/aws/aws-codeguru-cli).
 
 
 ## Security
