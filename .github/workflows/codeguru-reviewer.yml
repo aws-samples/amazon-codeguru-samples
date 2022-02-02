@@ -2,6 +2,7 @@
 name: Analyze with CodeGuru Reviewer
 on: [pull_request, workflow_dispatch]
 permissions:
+    actions: read
     id-token: write
     contents: read
     pull-requests: write
@@ -11,7 +12,7 @@ jobs:
   CodeGuruReviewerScan:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "$GITHUB_CONTEXT"
+    - run: echo "$GITHUB_TOKEN"
     - run: env
     - name: Assume IAM Role
       continue-on-error: true
