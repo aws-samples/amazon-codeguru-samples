@@ -1,6 +1,6 @@
 
 name: Analyze with CodeGuru Reviewer
-on: [pull_request, workflow_dispatch]
+on: [pull_request, workflow_dispatch, push]
 permissions:
     actions: read
     id-token: write
