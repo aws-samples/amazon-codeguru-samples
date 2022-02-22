@@ -192,6 +192,6 @@ public class Main {
         final long length = file.length();
         // Noncompliant: avoids using the correct format strings for their argument types.
         final String s = format("File length is %s", length);
-        log.info(s);
+        System.out.println(s);
     }    
 }
