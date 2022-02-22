@@ -64,7 +64,7 @@ public class Main {
             System.out.println(cipher);
         }
         catch (NoSuchPaddingException e) {
-            e.printStackTrace();
+            throw new RuntimeException("hiding the old exception");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
