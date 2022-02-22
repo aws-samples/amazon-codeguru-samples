@@ -5,6 +5,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.NoSuchAlgorithmException;
@@ -187,4 +188,11 @@ public class Main {
 
         }
     }
+    
+    void formatStringNoncompliant(final File file) {
+        final long length = file.length();
+        // Noncompliant: avoids using the correct format strings for their argument types.
+        final String s = String.format("File length is %s", length);
+        System.out.println(s);
+    }    
 }
