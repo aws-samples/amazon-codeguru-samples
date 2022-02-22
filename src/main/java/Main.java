@@ -191,7 +191,7 @@ public class Main {
     void formatStringNoncompliant(final File file) {
         final long length = file.length();
         // Noncompliant: avoids using the correct format strings for their argument types.
-        final String s = format("File length is %s", length);
+        final String s = String.format("File length is %s", length);
         System.out.println(s);
     }    
 }
