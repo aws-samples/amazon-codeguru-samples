@@ -31,6 +31,7 @@ public class Main {
     static final String DEFAULT_VALID_PATH = "./test/file3.txt";
 
     public static void main(String[] args) {
+        System.out.println("AWS Sample for Code Guru demonstration");
         AWSCredentials creds =
             getCreds(myKeyId, mySecretKey);
         System.out.println(creds.getAWSSecretKey());
